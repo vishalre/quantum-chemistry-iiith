@@ -18,9 +18,10 @@ function checkAns(form)
 					
 				  if(Ans["q"+i]==parseInt(sel)){
 		          	
-		          correct+="Q"+i+", ";
-		          flag++;
-				   c++;}
+		          		correct+="Q"+i+", ";
+		          		flag++;
+					   c++;
+				  }
 				  else if(Ans["q"+i]!=parseInt(sel)){
 				   flag++;}
 				}
