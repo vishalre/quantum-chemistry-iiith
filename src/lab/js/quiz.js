@@ -1,34 +1,51 @@
-	function checkAns(form)
+function checkAns(form)
 	{
-		wrong="";
+		correct="";
 		var flag=0;
+		var a=0;
+		var b=0;
+		var c=0;
 		for(i=1;i<=len;++i)
 		{
 			var ll = form["q"+i].length;
 			var sel=-1;
 			for(j=0;j<ll;++j)
 			{
-				if(form["q"+i][j].checked)
+				if(form["q"+i][j].checked){
+					
 					sel=j;
-			}
-			if(Ans["q"+i]!=parseInt(sel)){
-				wrong+="Q"+i+", ";
-				flag++;
-			}
+					a++;
+					
+				  if(Ans["q"+i]==parseInt(sel)){
+		          	
+		          correct+="Q"+i+", ";
+		          flag++;
+				   c++;}
+				  else if(Ans["q"+i]!=parseInt(sel)){
+				   flag++;}
+				}
+
+				
+				
+				}
 		}
-		wrong = wrong.substring(0,wrong.length-2);
-		if(flag>1){
-		if(wrong!="")
-			alert(wrong +"  are wrong");
-		else 
-			alert("all ans are correct.")
+
+
+		correct = correct.substring(0,correct.length-2);
+		if(flag>=1){
+		if(correct!="")
+			alert(correct+"  correct");
+		else if(correct=="")
+			alert("None are correct");
 		return false;
 		}
 		else {
-		if(wrong!="")
-			alert(wrong +"  is wrong");
-		else 
-			alert("all ans are correct.")
+		if(a===0)
+			alert("Please attempt atleast one question");
+		if(c===len)
+			{alert('All Answers are correct');}
+		
 		return false;
-		}
 	}
+		
+		}
